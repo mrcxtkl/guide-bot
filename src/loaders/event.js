@@ -8,7 +8,7 @@ module.exports = client => {
 
     for (file of folderFiles) {
       const eventFile = require(`../events/${dir}/${file}`);
-      const eventName = file.split('.')[0];
+      const eventName = file.split('.js')[0];
       client.on(eventName, eventFile.bind(null, client));
     };
   };

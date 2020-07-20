@@ -9,8 +9,8 @@ module.exports = (client) => {
     const folderFiles = readdirSync(`./src/commands/${dir}/`).filter(f => f.endsWith('.js'));
 
     for (file of folderFiles) {
-      const pull = require(`../commands/${dir}/${file}`);
-      client.commands.set(pull.config.name, pull);
+      const command = require(`../commands/${dir}/${file}`);
+      client.commands.set(command.help.name, command);
     }
   }
 }

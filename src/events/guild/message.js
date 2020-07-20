@@ -8,6 +8,6 @@ module.exports = async (client, message) => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const cmd = args.shift().toLowerCase();
 
-	const command = client.commands.find(c => c.config.name.toLowerCase() === cmd || (c.config.aliases && c.config.aliases.includes(cmd)))
+	const command = client.commands.find(c => c.help.name.toLowerCase() === cmd || (c.help.aliases && c.help.aliases.includes(cmd)))
 	if (command) command.run({ client, message, args })
 }

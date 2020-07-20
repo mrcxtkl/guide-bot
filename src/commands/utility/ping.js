@@ -1,5 +1,5 @@
 module.exports = {
-    config: {
+    help: {
         name: 'ping',
         aliases: ['pong'],
         description: 'Mostra a latência entre o bot e a API.',
